@@ -1,0 +1,62 @@
+# Ignore diretórios e arquivos gerados pelo Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore diretórios de build
+bin/
+obj/
+
+# Ignore arquivos de log e cache
+*.log
+*.tlog/
+*.cache
+*.ide
+
+# Ignore arquivos de configuração local
+appsettings.Development.json
+secrets.json
+
+# Ignore pacotes NuGet e dependências restauradas
+*.nupkg
+packages/
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+
+# Ignore configurações do Rider/JetBrains
+.idea/
+
+# Ignore arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore arquivos temporários do Windows
+*.tmp
+*.bak
+*.swp
+
+# Ignore arquivos de publicação
+publish/
+*.Publish.xml
+
+# Ignore o repositório do Git em subdiretórios, se houver
+**/.git/
+
+# Ignore arquivos do Docker (se você estiver usando e quiser manter privado)
+docker-compose.override.yml
+
+# Ignore pasta de cache do Test Explorer
+TestResults/
+
+# Ignore coverage (caso use ferramentas de cobertura de código)
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore pasta de histórico local do Git (caso use ferramentas como GitLens)
+.history/
+
