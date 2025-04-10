@@ -19,18 +19,40 @@ namespace Conceitos_Basicos
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Conta c1 = new Conta(1,"Thiago Povoa");
 
-            Conta c = new Conta();
 
-            c.numeroConta = 1;
-            c.titularConta = "Thiago";
-            c.saldoConta = 1500.0m;
+            c1.Depositar(1000.0m);
 
-            string message = $"Titular: {c.titularConta}\n" +
-                $"Saldo da conta: {c.saldoConta:F2}\n" +
-                $"Número da Conta: {c.numeroConta}";
+            bool situacaoDoSaque = c1.Sacar(200);
 
-            MessageBox.Show(message);
+            Conta c2 = new Conta(2, "Daiana Povoa");
+            
+
+            c1.Transfere(200.0m, c2);
+
+
+            string message = $"Títular: {c1.TitularConta.Nome}\n" +
+                $"Saldo da conta: {c1.SaldoConta:F2}\n" +
+                $"Número da Conta: {c1.NumeroConta}\n" +
+                $"Situação do saque: {situacaoDoSaque}\n\n" +
+                $"Títular: {c2.TitularConta.Nome}\n" +
+                $"Número da Conta: {c2.NumeroConta}\n" +
+                $"Saldo da conta: {c2.SaldoConta:F2}";
+
+            //string message = $"Saldo da conta: {c.SaldoConta}" +
+            //    $"Situação do saque: {situacaoDoSaque}" +
+            //    $"Número da Conta: {c.NumeroConta}";
+
+            if (situacaoDoSaque)
+            {
+                MessageBox.Show($"Tranferência realizado com sucesso!\n" + message);
+            }
+            else
+            {
+                MessageBox.Show("Impossível realizar transação.");
+            }
+
             //// 1 Seção
             //string name = "Thiago";
             //MessageBox.Show("Olá " + name);
