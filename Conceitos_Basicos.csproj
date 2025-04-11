@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteDTO.cs" />
+    <Compile Include="ClienteMapper.cs" />
     <Compile Include="Conta.cs" />
+    <Compile Include="ContaDTO.cs" />
+    <Compile Include="ContaMapper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

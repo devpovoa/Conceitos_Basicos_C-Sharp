@@ -13,13 +13,6 @@ namespace Conceitos_Basicos
         public string Rg { get; private set; }
         public string Endereco { get; private set; }
 
-        public Cliente(string nome)
-        {
-            this.Nome = nome;
-            this.Cpf = string.Empty;
-            this.Rg = string.Empty;
-            this.Endereco = string.Empty;
-        }
 
         public Cliente(string nome, string cpf, string rg, string endereco)
         {
@@ -29,9 +22,6 @@ namespace Conceitos_Basicos
             this.Endereco = endereco;
         }
 
-        public Cliente()
-        {
-        }
 
         public void AtualizarEndereco(string novoEndereco)
         {

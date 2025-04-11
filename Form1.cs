@@ -19,39 +19,63 @@ namespace Conceitos_Basicos
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Conta c1 = new Conta(1,"Thiago Povoa");
+            ContaDTO contaDTO1 = new ContaDTO
+            {
+                NumeroConta = 1,
+                SaldoConta = 0,
+                TitularConta = new ClienteDTO
+                {
+                    Nome = "Thiago Povoa",
+                    Cpf = "123.456.789 - 10",
+                    Rg = "RJ501",
+                    Endereco = "Rua do Código"
+                }
 
+            };
 
-            c1.Depositar(1000.0m);
+            ContaDTO contaDTO2 = new ContaDTO
+            {
+                NumeroConta = 1,
+                SaldoConta = 1000.0m,
+                TitularConta = new ClienteDTO
+                {
+                    Nome = "Daiana Povoa",
+                    Cpf = "123.456.789 - 10",
+                    Rg = "RJ501",
+                    Endereco = "Rua do Código"
+                }
 
-            bool situacaoDoSaque = c1.Sacar(200);
+            };
 
-            Conta c2 = new Conta(2, "Daiana Povoa");
-            
+            Conta c1 = ContaMapper.ConverterParaEntidade(contaDTO1);
+            Conta c2 = ContaMapper.ConverterParaEntidade(contaDTO2);
 
-            c1.Transfere(200.0m, c2);
-
-
-            string message = $"Títular: {c1.TitularConta.Nome}\n" +
-                $"Saldo da conta: {c1.SaldoConta:F2}\n" +
-                $"Número da Conta: {c1.NumeroConta}\n" +
-                $"Situação do saque: {situacaoDoSaque}\n\n" +
-                $"Títular: {c2.TitularConta.Nome}\n" +
-                $"Número da Conta: {c2.NumeroConta}\n" +
-                $"Saldo da conta: {c2.SaldoConta:F2}";
-
-            //string message = $"Saldo da conta: {c.SaldoConta}" +
-            //    $"Situação do saque: {situacaoDoSaque}" +
-            //    $"Número da Conta: {c.NumeroConta}";
+            bool situacaoDoSaque = c2.Sacar(200);
 
             if (situacaoDoSaque)
             {
-                MessageBox.Show($"Tranferência realizado com sucesso!\n" + message);
+                c1.Depositar(200);
+            }
+
+            string message = 
+                 $"Títular: {c1.TitularConta.Nome}\n" +
+                 $"Saldo da conta: {c1.SaldoConta:F2}\n" +
+                 $"Número da Conta: {c1.NumeroConta}\n" +
+                 $"Situação do saque: {situacaoDoSaque}\n\n" +
+                 $"Títular: {c2.TitularConta.Nome}\n" +
+                 $"Número da Conta: {c2.NumeroConta}\n" +
+                 $"Saldo da conta: {c2.SaldoConta:F2}\n" +
+                 $"Situação da Operação: {situacaoDoSaque}";
+
+            if (situacaoDoSaque)
+            {
+                MessageBox.Show($"Transferência realizada com sucesso!\n\n{message}");
             }
             else
             {
                 MessageBox.Show("Impossível realizar transação.");
             }
+
 
             //// 1 Seção
             //string name = "Thiago";

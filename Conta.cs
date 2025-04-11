@@ -6,20 +6,13 @@
         public Cliente TitularConta { get; private set; }
         public decimal SaldoConta { get; private set; }
 
-        public Conta(int numeroConta, string nome)
-        {
-            this.NumeroConta = numeroConta;
-            this.TitularConta = new Cliente(nome);
-            this.SaldoConta = 0;
-        }
 
-        public Conta(int numeroConta, string nome, string cpf, string rg, string endereco)
+        public Conta(int numeroConta, Cliente titularConta, decimal saldoConta)
         {
-            this.NumeroConta = numeroConta;
-            this.TitularConta = new Cliente(nome, cpf, rg, endereco);
-            this.SaldoConta = 0;
+            NumeroConta = numeroConta;
+            TitularConta = titularConta;
+            SaldoConta = saldoConta;
         }
-
 
         //public void SacarValor(decimal valor) {
         //    if (this.saldoConta >= valor)
