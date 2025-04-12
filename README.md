@@ -1,3 +1,10 @@
+<div align="center">
+<img align="center" alt="Povoa-.Net" height="250" width="250" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg"/> 
+
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+</div>
+
 # 📌 O que é C# e .NET?
 
 **C#** (pronuncia-se "C sharp") é uma linguagem de programação criada pela Microsoft, inicialmente como o projeto **COOL** (_C-Like Object Oriented Language_). Desenvolvida sob a liderança do engenheiro **Anders Hejlsberg**, C# foi projetada para ser moderna, segura e orientada a objetos, incorporando aprendizados e melhorias sobre linguagens existentes.
